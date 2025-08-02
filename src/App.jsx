@@ -157,10 +157,10 @@ const Header = ({ currentUser, onLogout, onNavigate, onToggleTheme, isDarkMode }
         </h1>
         <div className="hidden md:flex items-center space-x-4">
           <nav className="space-x-4">
-            <a href="#" onClick={(e) => { e.preventDefault(); onNavigate('home'); }} className="text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400">Home</a>
-            <a href="#" className="text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400">Teknologi</a>
-            <a href="#" className="text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400">Keuangan</a>
-            <a href="#" className="text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400">Travel</a>
+            <a href="/" onClick={(e) => { e.preventDefault(); onNavigate('home'); }} className="text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400">Home</a>
+            <a href="/teknologi" className="text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400">Teknologi</a>
+            <a href="/keuangan" className="text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400">Keuangan</a>
+            <a href="/travel" className="text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400">Travel</a>
           </nav>
           <button onClick={onToggleTheme} className="p-2 rounded-full text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700">
             <Icon name={isDarkMode ? 'sun' : 'moon'} className="w-5 h-5" />
@@ -188,10 +188,10 @@ const Header = ({ currentUser, onLogout, onNavigate, onToggleTheme, isDarkMode }
       {isMenuOpen && (
         <div className="md:hidden bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
           <nav className="flex flex-col p-4 space-y-2">
-            <a href="#" onClick={(e) => { e.preventDefault(); onNavigate('home'); setIsMenuOpen(false); }} className="text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400">Home</a>
-            <a href="#" className="text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400">Teknologi</a>
-            <a href="#" className="text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400">Keuangan</a>
-            <a href="#" className="text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400">Travel</a>
+            <a href="/" onClick={(e) => { e.preventDefault(); onNavigate('home'); setIsMenuOpen(false); }} className="text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400">Home</a>
+            <a href="/teknologi" className="text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400">Teknologi</a>
+            <a href="/keuangan" className="text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400">Keuangan</a>
+            <a href="/travel" className="text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400">Travel</a>
              {currentUser ? (
                 <>
                   { (currentUser.role === 'admin' || currentUser.role === 'superadmin') &&
@@ -1195,7 +1195,7 @@ const DeploymentGuide = () => (
                 <p className="text-gray-600 dark:text-gray-400 mb-4">Backend memerlukan server yang bisa menjalankan kode PHP atau Python. Anda bisa menggunakan VPS (DigitalOcean, Linode) atau Platform-as-a-Service (Heroku, Render).</p>
                  <ol className="list-decimal list-inside space-y-2 text-gray-600 dark:text-gray-400">
                     <li>**Siapkan Server:** Pilih penyedia layanan dan siapkan server dengan lingkungan yang sesuai (misalnya, PHP, Composer, Nginx untuk Laravel).</li>
-                    <li>**Upload Kode:** Transfer kode backend Anda ke server menggunakan Git.</li>
+                    <li>**Upload Kode:** Transfer kode backend Anda to server menggunakan Git.</li>
                     <li>**Install Dependencies:** Jalankan `composer install` (untuk Laravel) atau `pip install -r requirements.txt` (untuk Django).</li>
                     <li>**Konfigurasi Database:** Buat database di server Anda dan perbarui file konfigurasi (`.env`) dengan kredensial database yang baru.</li>
                     <li>**Jalankan Migrasi:** Jalankan `php artisan migrate` (Laravel) atau `python manage.py migrate` (Django) untuk membuat tabel di database.</li>
