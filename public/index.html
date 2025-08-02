@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Gandex Post - Publikasi Artikel Modern</title>
+    
+    <!-- Memuat Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Memuat Google Fonts (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Sedikit CSS kustom untuk menerapkan font -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+    
+    <!-- 
+      Skrip untuk menangani Dark Mode.
+      Diletakkan di <head> untuk mencegah layar berkedip (FOUC - Flash of Unstyled Content)
+      saat memuat halaman.
+    -->
+    <script>
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 transition-colors duration-300">
+    
+    <!-- 
+      Ini adalah elemen target utama. 
+      Seluruh aplikasi React yang kita buat akan dirender (dimuat) di dalam div ini.
+    -->
+    <div id="root"></div>
+    
+    <!--
+      CATATAN PENTING:
+      Dalam proyek React yang sesungguhnya (dibuat dengan Vite atau Create React App),
+      akan ada tag <script> di sini yang secara otomatis memuat file JavaScript
+      hasil 'build' dari kode React Anda. Contohnya akan terlihat seperti ini:
+      
+      <script type="module" src="/src/main.jsx"></script>
+      
+      File .jsx tersebut yang akan berisi kode React dari artefak sebelumnya dan
+      perintah untuk merendernya ke dalam <div id="root">.
+    -->
+
+</body>
+</html>
